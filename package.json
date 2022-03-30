@@ -1,7 +1,7 @@
 {
-  "name": "book-search-engine",
+  "name": "moviechecklist",
   "version": "1.0.0",
-  "description": "app that allows search of books",
+  "description": "",
   "main": "server/server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -12,13 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KevinGodek/book-search-engine.git"
+    "url": "https://github.com/KevinGodek/movie-search-engine"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "react-scripts": "^5.0.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0"

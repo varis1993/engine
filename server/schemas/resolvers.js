@@ -38,28 +38,28 @@ const resolvers = {
 
             return { token, user };
         },
-        saveBook: async (parent, { book }, context) => {
+        saveMovie: async (parent, { movie }, context) => {
             if (context.user) {
-                const addBook = await User.findByIdAndUpdate(
+                const addMovie = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedBooks: book } },
+                    { $addToSet: { savedMovies: movie } },
                     { new: true }
                 );
 
-                return addBook;
+                return addMovie;
             }
 
             throw new AuthenticationError('You need to be logged in!');
         },
-        removeBook: async (parent, { bookId }, context) => {
+        removeMovie: async (parent, { movieId }, context) => {
             if (context.user) {
-                const removeBook = await User.findByIdAndUpdate(
+                const removeMovie = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedBooks: { bookId: bookId } } },
+                    { $pull: { savedMovies: { movieId: movieId } } },
                     { new: true }
                 );
 
-                return removeBook;
+                return removeMovie;
             }
 
             throw new AuthenticationError('You need to be logged in!');

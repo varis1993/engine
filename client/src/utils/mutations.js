@@ -24,39 +24,38 @@ export const ADD_USER = gql`
     }
 `;
 
-export const SAVE_BOOK = gql`
-    mutation saveBook($book:BookInput!) {
-        saveBook(book: $book) {
+export const SAVE_MOVIE = gql`
+    mutation saveMovie($movie: MovieInput!) {
+        saveMovie(movie: $movie) {
         _id
         username
         email
-        bookCount
-        savedBooks {
-                bookId
-                authors
+        movieCount
+        savedMovies {
+                movieId
+                release
                 description
                 title
                 image
-                link
             }
         }
     }
 `;
 
-export const REMOVE_BOOK = gql`
-    mutation removeBook($bookId: String!) {
-        removeBook(bookId:$bookId) {
+export const REMOVE_MOVIE = gql`
+    mutation removeMovie($movieId: Int) {
+        removeMovie(movieId:$movieId) {
             _id
             username
             email
-            bookCount
-            savedBooks {
-                bookId
-                authors
+            movieCount
+            savedMovies {
+                movieId
+                release
                 description
                 title
                 image
-                link
+                
             }
         }
     }
